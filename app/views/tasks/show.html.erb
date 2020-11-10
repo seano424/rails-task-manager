@@ -1,0 +1,26 @@
+<div class="container">
+
+  <h1><%= @task.title %></h1>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page"><%= @task.details %></li>
+    </ol>
+  </nav>
+
+  <% if @task.completed %>
+    <input type="checkbox" name="title" checked>
+    <label for="title">This task is completed</label><br>
+    <hr>
+  <% else %>
+    <input type="checkbox" name="title">
+    <label for="title">This task is not completed</label><br>
+    <hr>
+  <% end %>
+
+  <button type="button" class="btn btn-primary"><%= link_to "Back to list", tasks_path %></button>
+  <button type="button" class="btn btn-primary"><%= link_to "Edit item", edit_path %></button>
+  <button type="button" class="btn btn-primary"><%= link_to "Delete item", task_path(@task), method: :delete, data: { confirm: "Are you sure?"} %></button>
+  
+
+</div>
+

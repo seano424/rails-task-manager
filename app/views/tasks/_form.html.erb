@@ -1,0 +1,9 @@
+<div class="container">
+<%= simple_form_for(@task) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :details %>
+  <%= f.input :completed %>
+  <button class="btn btn-danger"><%= link_to "Back to list", tasks_path %></button>
+  <button class="btn btn-primary" type="submit">Submit</button>
+<% end %>
+</div>

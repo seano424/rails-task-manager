@@ -1,18 +1,25 @@
 
 <div class="container">
-  <h1>My tasks</h1>
-
-  <% @tasks.each do |task| %>
-    <% if task.completed %>
-      <input type="checkbox" name="title" checked>
-      <label for="title"> <%= link_to task.title, task_path(task) %> </label><br>
-    <% else %>
-      <input type="checkbox" name="title">
-      <label for="title"> <%= link_to task.title, task_path(task) %> </label><br>
+  <section class="header">
+    <h1>Tasks</h1>
+  </section>
+  <section class="content">
+    <% @tasks.each do |task| %>
+      <% if task.completed %>
+      <div class="task d-flex flex-row-reverse">
+        <input type="checkbox" style="margin: 8px" name="title" checked>
+        <label for="title"> <%= link_to task.title, task_path(task) %> </label><br>
+      </div>
+      <% else %>
+      <div class="task d-flex flex-row-reverse">
+        <input type="checkbox" style="margin: 8px" name="title">
+        <label for="title"> <%= link_to task.title, task_path(task) %> </label><br>
+      </div>
+      <% end %>
     <% end %>
-  <% end %>
-
-  <button type="button" class="btn btn-primary"><%= link_to "Create new task", new_path %></button>
-  <%# <%= link_to "+ Add a new task", %>
+  
+    <button type="button" class="btn btn-primary"><%= link_to "Create new task", new_path %></button>
+    <%# <%= link_to "+ Add a new task", %>
+  </section>
 </div>
 

@@ -17,7 +17,7 @@
     <hr>
   <% end %>
 
-  <button type="button" class="btn btn-primary"><%= link_to "Back to list", tasks_path %></button>
+  <button type="button" class="btn btn-primary"><%= link_to "Back to list", root_path %></button>
   <button type="button" class="btn btn-primary"><%= link_to "Edit item", edit_path %></button>
   <button type="button" class="btn btn-primary"><%= link_to "Delete item", task_path(@task), method: :delete, data: { confirm: "Are you sure?"} %></button>
   
